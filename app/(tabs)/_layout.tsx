@@ -3,10 +3,10 @@ import React from 'react';
 import { Platform } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { MaterialIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -30,14 +30,28 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons size={28} name="home" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="components"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Components',
+          tabBarIcon: ({ color }) => <MaterialIcons size={28} name="widgets" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="colors"
+        options={{
+          title: 'Colors',
+          tabBarIcon: ({ color }) => <MaterialIcons size={28} name="style" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="examples"
+        options={{
+          title: 'Examples',
+          tabBarIcon: ({ color }) => <MaterialIcons size={28} name="smartphone" color={color} />,
         }}
       />
     </Tabs>
