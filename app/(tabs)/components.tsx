@@ -26,6 +26,7 @@ export default function ComponentScreen() {
           <Pressable onPress={() => router.push('/(components)/alerts')}>
             <View style={styles.componentContainer}>
               <View style={styles.componentHeadContainer}>
+                <MaterialIcons size={24} name="check" color="black" />
                 <Text style={styles.h1}>Alert</Text>
               </View>
               <View style={styles.componentBodyContainer}>
@@ -38,13 +39,22 @@ export default function ComponentScreen() {
           </Pressable>
 
           <View style={styles.componentContainer}>
-            <Text style={styles.bodyText}>Buttons</Text>
+            <View style={styles.componentHeadContainer}>
+              <MaterialIcons size={24} name="schedule" color="black" />
+              <Text style={styles.bodyText}>Buttons</Text>
+            </View>
           </View>
           <View style={styles.componentContainer}>
-            <Text style={styles.bodyText}>Cards</Text>
+            <View style={styles.componentHeadContainer}>
+              <MaterialIcons size={24} name="schedule" color="black" />
+              <Text style={styles.bodyText}>Cards</Text>
+            </View>
           </View>
           <View style={styles.componentContainer}>
-            <Text style={styles.bodyText}>Links</Text>
+            <View style={styles.componentHeadContainer}>
+              <MaterialIcons size={24} name="schedule" color="black" />
+              <Text style={styles.bodyText}>Links</Text>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -106,6 +116,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    gap: 8,
   },
 
   componentBodyContainer: {

@@ -1,7 +1,8 @@
 // home.tsx example
 import { MaterialIcons } from "@expo/vector-icons";
+import { router } from 'expo-router';
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function ColorScreen() {
   return (
@@ -19,14 +20,20 @@ export default function ColorScreen() {
             and feel. They can be customized by changing your Material theme.
           </Text>
 
-          <View style={styles.componentContainer}>
-            <Text style={styles.bodyText}>Neutrals</Text>
-            <MaterialIcons size={24} name="arrow-forward" color="black" />
-          </View>
-          <View style={styles.componentContainer}>
-            <Text style={styles.bodyText}>Blue</Text>
-            <MaterialIcons size={24} name="arrow-forward" color="black" />
-          </View>
+          <Pressable onPress={() => router.push('/(colors)/neutrals')}>
+            <View style={styles.componentContainer}>
+              <Text style={styles.bodyText}>Neutrals</Text>
+              <MaterialIcons size={24} name="arrow-forward" color="black" />
+            </View>
+          </Pressable>
+
+          <Pressable onPress={() => router.push('/(colors)/blue')}>
+            <View style={styles.componentContainer}>
+              <Text style={styles.bodyText}>Blue</Text>
+              <MaterialIcons size={24} name="arrow-forward" color="black" />
+            </View>
+          </Pressable>
+
           <View style={styles.componentContainer}>
             <Text style={styles.bodyText}>Red</Text>
             <MaterialIcons size={24} name="arrow-forward" color="black" />
@@ -35,6 +42,7 @@ export default function ColorScreen() {
             <Text style={styles.bodyText}>Green</Text>
             <MaterialIcons size={24} name="arrow-forward" color="black" />
           </View>
+          
         </View>
       </ScrollView>
     </SafeAreaView>
