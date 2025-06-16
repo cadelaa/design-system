@@ -64,7 +64,7 @@ export default function AlertScreen() {
                 <View style={[{ borderRadius: 8, gap: 8, backgroundColor: '#FEF3C7', padding: 16, flexDirection: 'row', alignItems: 'center' }]}>
                   <MaterialIcons size={24} name="warning" color="#92400E" />
                   <View style={[{ gap: 4, flex: 1, flexShrink: 1 }]}>
-                    <Text style={[{ color: '#92400E', fontSize: 18, fontWeight: '600', }]}>This is the Info Alert</Text>
+                    <Text style={[{ color: '#92400E', fontSize: 18, fontWeight: '600', }]}>This is the Warning Alert</Text>
                     <Text style={[{ color: '#92400E', fontSize: 14, }]}>This is the alert description which provides more context on the alert.</Text>
                   </View>
                 </View>
@@ -76,6 +76,43 @@ export default function AlertScreen() {
             <View style={styles.componentContainer}>
               <Text style={styles.h2}>Complex Alert</Text>
               <View style={[{ gap: 8 }]}>
+
+                <View style={[{ borderRadius: 8, gap: 8, backgroundColor: '#D1FAE5', padding: 16, flexDirection: 'row', alignItems: 'center' }]}>
+                  <View style={[{ gap: 4, flex: 1, flexShrink: 1 }]}>
+                    <Text style={[{ color: '#065F46', fontSize: 18, fontWeight: '600', }]}>This is the Success Alert</Text>
+                    <Text style={[{ color: '#065F46', fontSize: 14, }]}>This is the alert description which provides more context on the alert.</Text>
+                    <Text style={[{ color: '#065F46', fontSize: 14, opacity: 0.6, }]}>2m ago</Text>
+                  </View>
+                  <MaterialIcons size={24} name="close" color="#065F46" />
+                </View>
+
+                <View style={[{ borderRadius: 8, gap: 8, backgroundColor: '#FECACA', padding: 16, flexDirection: 'row', alignItems: 'center' }]}>
+                  <View style={[{ gap: 4, flex: 1, flexShrink: 1 }]}>
+                    <Text style={[{ color: '#991B1B', fontSize: 18, fontWeight: '600', }]}>This is the Error Alert</Text>
+                    <Text style={[{ color: '#991B1B', fontSize: 14, }]}>This is the alert description which provides more context on the alert.</Text>
+                    <Text style={[{ color: '#991B1B', fontSize: 14, opacity: 0.6, }]}>2m ago</Text>
+                  </View>
+                  <MaterialIcons size={24} name="close" color="#991B1B" />
+                </View>
+
+                <View style={[{ borderRadius: 8, gap: 8, backgroundColor: '#DBEAFE', padding: 16, flexDirection: 'row', alignItems: 'center' }]}>
+                  <View style={[{ gap: 4, flex: 1, flexShrink: 1 }]}>
+                    <Text style={[{ color: '#1E3A8A', fontSize: 18, fontWeight: '600', }]}>This is the Info Alert</Text>
+                    <Text style={[{ color: '#1E3A8A', fontSize: 14, }]}>This is the alert description which provides more context on the alert.</Text>
+                    <Text style={[{ color: '#1E3A8A', fontSize: 14, opacity: 0.6, }]}>2m ago</Text>
+                  </View>
+                  <MaterialIcons size={24} name="close" color="#1E3A8A" />
+                </View>
+
+                <View style={[{ borderRadius: 8, gap: 8, backgroundColor: '#FEF3C7', padding: 16, flexDirection: 'row', alignItems: 'center' }]}>
+                  <View style={[{ gap: 4, flex: 1, flexShrink: 1 }]}>
+                    <Text style={[{ color: '#92400E', fontSize: 18, fontWeight: '600', }]}>This is the Warning Alert</Text>
+                    <Text style={[{ color: '#92400E', fontSize: 14, }]}>This is the alert description which provides more context on the alert.</Text>
+                    <Text style={[{ color: '#92400E', fontSize: 14, opacity: 0.6, }]}>2m ago</Text>
+                  </View>
+                  <MaterialIcons size={24} name="close" color="#92400E" />
+                </View>
+
               </View>
             </View>
 

@@ -1,3 +1,4 @@
+import Tag from '@/components/Tag';
 import { MaterialIcons } from "@expo/vector-icons";
 import { useRouter } from 'expo-router';
 import { StatusBar } from "expo-status-bar";
@@ -25,9 +26,11 @@ export default function ComponentScreen() {
 
           <Pressable onPress={() => router.push('/(components)/alerts')}>
             <View style={styles.componentContainer}>
-              <View style={styles.componentHeadContainer}>
-                <MaterialIcons size={24} name="check" color="black" />
-                <Text style={styles.h1}>Alert</Text>
+              <View style={[styles.componentHeadContainer]}>
+                <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', flex: 1, }]}>
+                  <Text style={styles.h1}>Alert</Text>
+                </View>
+                <Tag type="completed" message="Completed" />
               </View>
               <View style={styles.componentBodyContainer}>
                 <Text style={styles.bodyText}>An alert gives people critical information they need right away.</Text>
@@ -39,23 +42,50 @@ export default function ComponentScreen() {
           </Pressable>
 
           <View style={styles.componentContainer}>
-            <View style={styles.componentHeadContainer}>
-              <MaterialIcons size={24} name="schedule" color="black" />
-              <Text style={styles.bodyText}>Buttons</Text>
+            <View style={[styles.componentHeadContainer]}>
+              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', flex: 1, }]}>
+                <Text style={styles.h1}>Buttons</Text>
+              </View>
+              <Tag type="workInProgress" message="Work in Progress" />
+            </View>
+            <View style={styles.componentBodyContainer}>
+              <Text style={styles.bodyText}>Aa</Text>
+            </View>
+            <View style={styles.componentFooterContainer}>
+              <MaterialIcons size={24} name="arrow-forward" color="black" />
             </View>
           </View>
+
           <View style={styles.componentContainer}>
-            <View style={styles.componentHeadContainer}>
-              <MaterialIcons size={24} name="schedule" color="black" />
-              <Text style={styles.bodyText}>Cards</Text>
+            <View style={[styles.componentHeadContainer]}>
+              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', flex: 1, }]}>
+                <Text style={styles.h1}>Cards</Text>
+              </View>
+              <Tag type="planned" message="Planned" />
+            </View>
+            <View style={styles.componentBodyContainer}>
+              <Text style={styles.bodyText}>Aa</Text>
+            </View>
+            <View style={styles.componentFooterContainer}>
+              <MaterialIcons size={24} name="arrow-forward" color="black" />
             </View>
           </View>
+
           <View style={styles.componentContainer}>
-            <View style={styles.componentHeadContainer}>
-              <MaterialIcons size={24} name="schedule" color="black" />
-              <Text style={styles.bodyText}>Links</Text>
+            <View style={[styles.componentHeadContainer]}>
+              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', flex: 1, }]}>
+                <Text style={styles.h1}>Links</Text>
+              </View>
+              <Tag type="planned" message="Planned" />
+            </View>
+            <View style={styles.componentBodyContainer}>
+              <Text style={styles.bodyText}>Aa</Text>
+            </View>
+            <View style={styles.componentFooterContainer}>
+              <MaterialIcons size={24} name="arrow-forward" color="black" />
             </View>
           </View>
+
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -108,6 +138,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     borderWidth: 1,
     borderColor: "#ddd",
+    flex: 1,
   },
 
   componentHeadContainer: {

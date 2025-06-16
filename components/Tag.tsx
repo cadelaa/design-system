@@ -4,18 +4,18 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const iconData = {
-  success: { name: 'check-circle', color: '#065F46' },
-  error: { name: 'error', color: '#991B1B' },
-  info: { name: 'info', color: '#1E3A8A' },
-  warning: { name: 'warning', color: '#92400E' },
+  completed: { name: 'check-circle', color: '#065F46' },
+  cancelled: { name: 'close', color: '#991B1B' },
+  planned: { name: 'info', color: '#1E3A8A' },
+  workInProgress: { name: 'schedule', color: '#92400E' },
 };
 
-export default function SimpleAlert({ type = 'info', message = 'This is an alert.' }) {
+export default function Tag({ type = 'info', message = 'This is an alert.' }) {
   const backgroundColor = {
-    success: '#D1FAE5',
-    error: '#FECACA',
-    info: '#DBEAFE',
-    warning: '#FEF3C7',
+    completed: '#D1FAE5',
+    cancelled: '#FECACA',
+    planned: '#DBEAFE',
+    workInProgress: '#FEF3C7',
   }[type];
 
   const { name, color } = iconData[type];
@@ -25,7 +25,7 @@ export default function SimpleAlert({ type = 'info', message = 'This is an alert
       <MaterialIcons
         name={name}
         color={color}
-        size={24}
+        size={20}
       />
       <Text style={[styles.text, { color }]}>{message}</Text>
     </View>
@@ -33,16 +33,17 @@ export default function SimpleAlert({ type = 'info', message = 'This is an alert
 }
 
 const styles = StyleSheet.create({
-  container: {
+    container: {
     flexDirection: 'row',
-    padding: 12,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
     borderRadius: 8,
     alignItems: 'center',
-  },
+    alignSelf: 'flex-start', // ← this is important
+    },
   text: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
     marginLeft: 8,
-    flex: 1,
   },
 });

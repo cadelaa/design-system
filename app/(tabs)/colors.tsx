@@ -1,4 +1,5 @@
-// home.tsx example
+
+import Tag from '@/components/Tag';
 import { MaterialIcons } from "@expo/vector-icons";
 import { router } from 'expo-router';
 import { StatusBar } from "expo-status-bar";
@@ -22,24 +23,36 @@ export default function ColorScreen() {
 
           <Pressable onPress={() => router.push('/(colors)/neutrals')}>
             <View style={styles.componentContainer}>
-              <Text style={styles.bodyText}>Neutrals</Text>
+              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8, }]}>
+                <Text style={styles.bodyText}>Neutrals</Text>
+                <Tag type="workInProgress" message="Work in Progress" />
+              </View>
               <MaterialIcons size={24} name="arrow-forward" color="black" />
             </View>
           </Pressable>
 
           <Pressable onPress={() => router.push('/(colors)/blue')}>
             <View style={styles.componentContainer}>
-              <Text style={styles.bodyText}>Blue</Text>
+              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8, }]}>
+                <Text style={styles.bodyText}>Blue</Text>
+                <Tag type="workInProgress" message="Work in Progress" />
+              </View>
               <MaterialIcons size={24} name="arrow-forward" color="black" />
             </View>
           </Pressable>
 
           <View style={styles.componentContainer}>
-            <Text style={styles.bodyText}>Red</Text>
+              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8, }]}>
+                <Text style={styles.bodyText}>Red</Text>
+                <Tag type="planned" message="Planned" />
+              </View>
             <MaterialIcons size={24} name="arrow-forward" color="black" />
           </View>
           <View style={styles.componentContainer}>
-            <Text style={styles.bodyText}>Green</Text>
+              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 8, }]}>
+                <Text style={styles.bodyText}>Green</Text>
+                <Tag type="planned" message="Planned" />
+              </View>
             <MaterialIcons size={24} name="arrow-forward" color="black" />
           </View>
           
