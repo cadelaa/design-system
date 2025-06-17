@@ -41,20 +41,22 @@ export default function ComponentScreen() {
             </View>
           </Pressable>
 
-          <View style={styles.componentContainer}>
-            <View style={[styles.componentHeadContainer]}>
-              <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', flex: 1, }]}>
-                <Text style={styles.h1}>Buttons</Text>
+          <Pressable onPress={() => router.push('/(components)/buttons')}>
+            <View style={styles.componentContainer}>
+              <View style={[styles.componentHeadContainer]}>
+                <View style={[{ display: 'flex', flexDirection: 'row', alignItems: 'center', flex: 1, }]}>
+                  <Text style={styles.h1}>Buttons</Text>
+                </View>
+                <Tag type="workInProgress" message="Work in Progress" />
               </View>
-              <Tag type="workInProgress" message="Work in Progress" />
+              <View style={styles.componentBodyContainer}>
+                <Text style={styles.bodyText}>Aa</Text>
+              </View>
+              <View style={styles.componentFooterContainer}>
+                <MaterialIcons size={24} name="arrow-forward" color="black" />
+              </View>
             </View>
-            <View style={styles.componentBodyContainer}>
-              <Text style={styles.bodyText}>Aa</Text>
-            </View>
-            <View style={styles.componentFooterContainer}>
-              <MaterialIcons size={24} name="arrow-forward" color="black" />
-            </View>
-          </View>
+          </Pressable>
 
           <View style={styles.componentContainer}>
             <View style={[styles.componentHeadContainer]}>
