@@ -1,21 +1,22 @@
 
+import { baseColors } from '@/themes/colors';
 import { MaterialIcons } from "@expo/vector-icons";
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const iconData = {
-  success: { name: 'check-circle', color: '#065F46' },
-  error: { name: 'error', color: '#991B1B' },
-  info: { name: 'info', color: '#1E3A8A' },
-  warning: { name: 'warning', color: '#92400E' },
+  success: { name: 'check-circle', color: baseColors.onSuccess, },
+  error: { name: 'error', color: baseColors.onError, },
+  info: { name: 'info', color: baseColors.onInfo, },
+  warning: { name: 'warning', color: baseColors.onWarning, },
 };
 
 export default function SimpleAlert({ type = 'info', message = 'This is an alert.' }) {
   const backgroundColor = {
-    success: '#D1FAE5',
-    error: '#FECACA',
-    info: '#DBEAFE',
-    warning: '#FEF3C7',
+    success: baseColors.success,
+    error: baseColors.error,
+    info: baseColors.info,
+    warning: baseColors.warning,
   }[type];
 
   const { name, color } = iconData[type];

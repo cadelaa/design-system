@@ -1,21 +1,22 @@
 
+import { baseColors } from '@/themes/colors';
 import { MaterialIcons } from "@expo/vector-icons";
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const iconData = {
-  completed: { name: 'check-circle', color: '#065F46' },
-  cancelled: { name: 'close', color: '#991B1B' },
-  planned: { name: 'info', color: '#1E3A8A' },
-  workInProgress: { name: 'schedule', color: '#92400E' },
+  completed: { name: 'check-circle', color: baseColors.onSuccess, },
+  cancelled: { name: 'close', color: baseColors.onError, },
+  planned: { name: 'info', color: baseColors.onInfo, },
+  workInProgress: { name: 'schedule', color: baseColors.onWarning, },
 };
 
 export default function Tag({ type = 'info', message = 'This is an alert.' }) {
   const backgroundColor = {
-    completed: '#D1FAE5',
-    cancelled: '#FECACA',
-    planned: '#DBEAFE',
-    workInProgress: '#FEF3C7',
+    completed: baseColors.success,
+    cancelled: baseColors.error,
+    planned: baseColors.info,
+    workInProgress: baseColors.warning,
   }[type];
 
   const { name, color } = iconData[type];

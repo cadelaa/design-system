@@ -1,11 +1,4 @@
-
-export const baseColors = {
-  white: '#FFFFFF',
-  black: '#000000',
-  primary: '#6000FF',
-  success: '#10B981',
-  error: '#EF4444',
-};
+// Colors
 
 export const gray = {
   5: '#E6E6E6',
@@ -71,6 +64,22 @@ export const green = {
   115: '#062306',
 };
 
+export const orange = {
+  5: '#FDEBDF',
+  10: '#FAD7BD',
+  20: '#F8C39D',
+  30: '#F6AF7C',
+  40: '#F49B5C',
+  50: '#F2893D',
+  60: '#F07A25',
+  70: '#D66D21',
+  80: '#B45B1C',
+  90: '#904916',
+  100: '#6C3711',
+  110: '#48250B',
+  115: '#351B08',
+};
+
 export const color = {
   5: '',
   10: '',
@@ -85,4 +94,23 @@ export const color = {
   100: '',
   110: '',
   115: '',
+};
+
+export const baseColors = {
+  white: '#FFFFFF',
+  black: '#000000',
+
+  primary: gray[115],
+  
+  onSuccess: green[70],
+  success: green[5],
+
+  onError: red[70],
+  error: red[5],
+
+  onInfo: blue[70],
+  info: blue[5],
+
+  onWarning: orange[80],
+  warning: orange[5],
 };

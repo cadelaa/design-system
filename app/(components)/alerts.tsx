@@ -1,4 +1,4 @@
-import SimpleAlert from '@/components/SimpleAlert';
+import SimpleAlert from '@/components/Alerts';
 import { MaterialIcons } from "@expo/vector-icons";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
@@ -22,21 +22,19 @@ export default function AlertScreen() {
               An alert gives people critical information they need right away.
             </Text>
 
-            <View style={styles.componentContainer}>
-              <Text style={styles.h2}>Simple Alert</Text>
+
+
+            <View style={[{ gap: 40 }]}>
+
+
               <View style={[{ gap: 8 }]}>
                   <SimpleAlert type="success" message="Your changes have been saved!" />
                   <SimpleAlert type="error" message="Something went wrong." />
                   <SimpleAlert type="info" message="This is an informational alert." />
                   <SimpleAlert type="warning" message="Be careful with this action." />
               </View>
-            </View>
-
-            <View style={styles.componentContainer}>
-              <Text style={styles.h2}>Basic Alert</Text>
 
               <View style={[{ gap: 8 }]}>
-                
                 <View style={[{ borderRadius: 8, gap: 8, backgroundColor: '#D1FAE5', padding: 16, flexDirection: 'row', alignItems: 'center' }]}>
                   <MaterialIcons size={24} name="check-circle" color="#065F46" />
                   <View style={[{ gap: 4, flex: 1, flexShrink: 1 }]}>
@@ -68,15 +66,9 @@ export default function AlertScreen() {
                     <Text style={[{ color: '#92400E', fontSize: 14, }]}>This is the alert description which provides more context on the alert.</Text>
                   </View>
                 </View>
-
               </View>
 
-            </View>
-
-            <View style={styles.componentContainer}>
-              <Text style={styles.h2}>Complex Alert</Text>
               <View style={[{ gap: 8 }]}>
-
                 <View style={[{ borderRadius: 8, gap: 8, backgroundColor: '#D1FAE5', padding: 16, flexDirection: 'row', alignItems: 'center' }]}>
                   <View style={[{ gap: 4, flex: 1, flexShrink: 1 }]}>
                     <Text style={[{ color: '#065F46', fontSize: 18, fontWeight: '600', }]}>This is the Success Alert</Text>
@@ -112,9 +104,12 @@ export default function AlertScreen() {
                   </View>
                   <MaterialIcons size={24} name="close" color="#92400E" />
                 </View>
-
               </View>
+
+
             </View>
+
+
 
           </View>
         </ScrollView>
