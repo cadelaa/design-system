@@ -1,8 +1,9 @@
+import Button from '@/components/Buttons';
 import { MaterialIcons } from "@expo/vector-icons";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View, } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function AlertScreen() {
   const router = useRouter();
@@ -157,9 +158,9 @@ export default function AlertScreen() {
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}
         >
-          <Pressable style={styles.floatingButton} onPress={() => router.back()}>
-            <Text style={styles.floatingButtonText}>Back</Text>
-          </Pressable>
+
+          <Button label={'Back'} variant="default" onPress={() => router.back()} style={{ alignSelf: 'stretch' }}></Button>
+          
         </LinearGradient>
       </View>
     </SafeAreaView>

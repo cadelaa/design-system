@@ -1,14 +1,15 @@
+import { Colors } from '@/constants/Colors';
 import React from 'react';
-import { Pressable, StyleSheet, Text, TextStyle, ViewStyle, } from 'react-native';
+import { Pressable, StyleProp, StyleSheet, Text, TextStyle, ViewStyle, } from 'react-native';
 
-type ButtonVariant = 'primary' | 'secondary' | 'text';
+type ButtonVariant = 'primary' | 'secondary' | 'text' | 'default';
 
 interface ButtonProps {
   label: string;
   onPress: () => void;
   variant?: ButtonVariant;
-  style?: ViewStyle;
-  textStyle?: TextStyle;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
   disabled?: boolean;
 }
 
@@ -25,18 +26,18 @@ export default function Button({
       onPress={onPress}
       disabled={disabled}
       style={({ pressed }) => [
-        styles.base,
+        ButtonStyles.base,
         variantStyles[variant].button,
-        pressed && !disabled && styles.pressed,
-        disabled && styles.disabled,
+        pressed && !disabled && ButtonStyles.pressed,
+        disabled && ButtonStyles.disabled,
         style,
       ]}
     >
       <Text
         style={[
-          styles.textBase,
+          ButtonStyles.textBase,
           variantStyles[variant].text,
-          disabled && styles.textDisabled,
+          disabled && ButtonStyles.textDisabled,
           textStyle,
         ]}
       >
@@ -44,9 +45,9 @@ export default function Button({
       </Text>
     </Pressable>
   );
-}
+};
 
-const styles = StyleSheet.create({
+const ButtonStyles = StyleSheet.create({
   base: {
     paddingVertical: 12,
     paddingHorizontal: 16,
@@ -76,28 +77,36 @@ const variantStyles: Record<ButtonVariant, {
 }> = {
   primary: {
     button: {
-      backgroundColor: 'black',
+      backgroundColor: Colors.light.primary,
     },
     text: {
-      color: '#FFFFFF',
+      color: Colors.light.onPrimary,
     },
   },
   secondary: {
     button: {
-      backgroundColor: '#CCC',
+      backgroundColor: Colors.light.secondary,
     },
     text: {
-      color: 'black',
+      color: Colors.light.onSecondary,
     },
   },
   text: {
     button: {
       backgroundColor: 'transparent',
-      borderWidth: 1,
-      borderColor: '#999',
+      borderWidth: 1.5,
+      borderColor: Colors.light.primary,
     },
     text: {
-      color: 'black',
+      color: Colors.light.primary,
+    },
+  },
+  default: {
+    button: {
+      backgroundColor: '#000',
+    },
+    text: {
+      color: '#FFF',
     },
   },
 };

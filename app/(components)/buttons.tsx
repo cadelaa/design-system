@@ -2,7 +2,7 @@ import Button from '@/components/Buttons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View, } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function AlertScreen() {
   const router = useRouter();
@@ -21,13 +21,10 @@ export default function AlertScreen() {
               Buttons prompt most actions in a UI.
             </Text>
 
-            <View style={styles.componentContainer}>
-              <Text style={styles.h2}>Simple Button</Text>
-                <Button label="Primary" variant="primary" onPress={() => console.log('Pressed!')} />
-                <Button label="Secondary" variant="secondary" onPress={() => {}} />
-                <Button label="Text" variant="text" onPress={() => {}} />
-                <Button label="Disabled" disabled onPress={() => {}} />
-            </View>
+            <Button label="Primary" variant="primary" onPress={() => console.log('Pressed!')} />
+            <Button label="Secondary" variant="secondary" onPress={() => {}} />
+            <Button label="Text" variant="text" onPress={() => {}} />
+            <Button label="Disabled" disabled onPress={() => {}} />
 
           </View>
         </ScrollView>
@@ -39,9 +36,9 @@ export default function AlertScreen() {
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}
         >
-          <Pressable style={styles.floatingButton} onPress={() => router.back()}>
-            <Text style={styles.floatingButtonText}>Back</Text>
-          </Pressable>
+
+          <Button label={'Back'} variant="default" onPress={() => router.back()} style={{ alignSelf: 'stretch' }}></Button>
+
         </LinearGradient>
       </View>
     </SafeAreaView>
@@ -77,6 +74,7 @@ const styles = StyleSheet.create({
   },
   content: {
     marginTop: 16,
+    gap: 16,
   },
   text: {
     fontSize: 16,
